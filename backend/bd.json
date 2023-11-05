@@ -1,0 +1,64 @@
+{
+  "pensamentos": [
+    {
+      "id": 1,
+      "conteudo": "A inteligência artificial está transformando o mundo da tecnologia de maneira revolucionária.",
+      "autoria": "John Doe",
+      "modelo": "modelo1"
+    },
+    {
+      "id": 2,
+      "conteudo": "A realidade virtual promete experiências imersivas incríveis para o futuro.",
+      "autoria": "Jane Smith",
+      "modelo": "modelo2"
+    },
+    {
+      "id": 3,
+      "conteudo": "A computação em nuvem é a espinha dorsal de muitos serviços online hoje em dia.",
+      "autoria": "Carlos Silva",
+      "modelo": "modelo3"
+    },
+    {
+      "id": 4,
+      "conteudo": "A Internet das Coisas está conectando objetos do dia a dia à internet, tornando nossas vidas mais inteligentes.",
+      "autoria": "Maria Santos",
+      "modelo": "modelo1"
+    },
+    {
+      "id": 5,
+      "conteudo": "A cibersegurança é fundamental para proteger nossos dados e privacidade na era digital.",
+      "autoria": "João Oliveira",
+      "modelo": "modelo2"
+    },
+    {
+      "id": 6,
+      "conteudo": "A robótica avançada está revolucionando a indústria de manufatura.",
+      "autoria": "Laura Mendes",
+      "modelo": "modelo3"
+    },
+    {
+      "id": 7,
+      "conteudo": "A programação é a linguagem do futuro, e todos devem aprender a falar essa língua.",
+      "autoria": "Pedro Rodrigues",
+      "modelo": "modelo1"
+    },
+    {
+      "id": 8,
+      "conteudo": "A realidade aumentada está criando novas possibilidades de interação com o mundo ao nosso redor.",
+      "autoria": "Ana Costa",
+      "modelo": "modelo2"
+    },
+    {
+      "id": 9,
+      "conteudo": "A automação está tornando os processos industriais mais eficientes e produtivos.",
+      "autoria": "Lucas Ferreira",
+      "modelo": "modelo3"
+    },
+    {
+      "id": 10,
+      "conteudo": "A impressão 3D está transformando a fabricação de protótipos e peças sob medida.",
+      "autoria": "Mariana Alves",
+      "modelo": "modelo1"
+    }
+  ]
+}
