@@ -21,17 +21,17 @@ export class PensamentoService {
   }
 
   editarPensamento(pensamento: Pensamento): Observable<Pensamento> {
-    const url = ENDPOINTS.pensamentoID.replace(CONSTANTS.id, pensamento.id!.toString());
+    const url = ENDPOINTS.pensamentoID.replace(CONSTANTS.ID, pensamento.id!.toString());
     return this.http.put<Pensamento>(url, pensamento);
   }
 
   excluirPensamento(id: number): Observable<Pensamento> {
-    const url = ENDPOINTS.pensamentoID.replace(CONSTANTS.id, id.toString());
+    const url = ENDPOINTS.pensamentoID.replace(CONSTANTS.ID, id.toString());
     return this.http.delete<Pensamento>(url);
   }
 
   buscarPorId(id: number): Observable<Pensamento> {
-    const url = ENDPOINTS.pensamentoID.replace(CONSTANTS.id, id.toString());
+    const url = ENDPOINTS.pensamentoID.replace(CONSTANTS.ID, id.toString());
     return this.http.get<Pensamento>(url);
   }
 }
