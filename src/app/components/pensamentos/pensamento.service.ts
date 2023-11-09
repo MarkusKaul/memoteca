@@ -12,10 +12,12 @@ export class PensamentoService {
 
   constructor(private http: HttpClient) { }
 
-  listarPensamentos(page: number): Observable<Pensamento[]> {
-    //GET /posts?_page=7&_limit=20
+  listarPensamentos(page: number, search: string = CONSTANTS.NO_RESEARCH): Observable<Pensamento[]> {
+    let params = new HttpParams().set('_page', page).set('_limit', CONSTANTS.LIMIT_PER_PAGE);
 
-    const params = new HttpParams().set('_page', page).set('_limit', CONSTANTS.LIMIT_PER_PAGE);
+    if (search?.trim()?.length >= CONSTANTS.MINIMUM_SEARCH_CHARACTERS) {
+      params = params.set('q', search);
+    }
 
     return this.http.get<Pensamento[]>(ENDPOINTS.pensamentos, { params });
   }
