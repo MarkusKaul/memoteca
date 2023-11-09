@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PensamentoService } from 'src/app/components/pensamentos/pensamento.service';
 import { Pensamento } from 'src/app/components/pensamentos/pensamento/pensamento';
 
 @Component({
@@ -15,13 +16,13 @@ export class PensamentoComponent implements OnInit {
     modelo: 'modelo1'
   }
 
-  constructor() { }
+  constructor(private pensamentoService: PensamentoService) { }
 
   ngOnInit(): void {
   }
 
   larguraPensamento() {
-    if (this.pensamento.conteudo.length > 256) {
+    if (this.pensamento.conteudo.length > 255) {
       return 'pensamento-g';
     }
     return 'pensamento-p';
