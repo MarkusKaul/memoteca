@@ -12,11 +12,17 @@ export class PensamentoService {
 
   constructor(private http: HttpClient) { }
 
-  listarPensamentos(page: number, search: string = CONSTANTS.NO_RESEARCH): Observable<Pensamento[]> {
-    let params = new HttpParams().set('_page', page).set('_limit', CONSTANTS.LIMIT_PER_PAGE);
+  listarPensamentos(page: number, search = CONSTANTS.NO_RESEARCH, favorito: boolean): Observable<Pensamento[]> {
+    let params = new HttpParams()
+                  .set('_page', page)
+                  .set('_limit', CONSTANTS.LIMIT_PER_PAGE);
 
     if (search?.trim()?.length >= CONSTANTS.MINIMUM_SEARCH_CHARACTERS) {
       params = params.set('q', search);
+    }
+
+    if (favorito) {
+      params = params.set('favorito', favorito);
     }
 
     return this.http.get<Pensamento[]>(ENDPOINTS.pensamentos, { params });
@@ -39,5 +45,10 @@ export class PensamentoService {
   buscarPorId(id: number): Observable<Pensamento> {
     const url = ENDPOINTS.pensamentoID.replace(CONSTANTS.ID, id.toString());
     return this.http.get<Pensamento>(url);
+  }
+
+  mudarFavorito(pensamento: Pensamento): Observable<Pensamento> {
+    pensamento.favorito = !pensamento.favorito;
+    return this.editarPensamento(pensamento);
   }
 }

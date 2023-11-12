@@ -6,4 +6,8 @@ export const CONSTANTS = {
   LIMIT_PER_PAGE: 6,
   MINIMUM_SEARCH_CHARACTERS: 3,
   NO_RESEARCH: '',
+  TITLES: {
+    MURAL: 'Meu Mural',
+    FAVORITOS: 'Meus Favoritos'
+  }
 }

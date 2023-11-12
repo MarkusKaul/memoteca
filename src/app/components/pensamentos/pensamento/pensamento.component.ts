@@ -13,8 +13,11 @@ export class PensamentoComponent implements OnInit {
     id: 0,
     conteudo: '',
     autoria: '',
-    modelo: 'modelo1'
+    modelo: 'modelo1',
+    favorito: false
   }
+
+  @Input() listaFavoritos: Pensamento[] = [];
 
   constructor(private pensamentoService: PensamentoService) { }
 
@@ -26,5 +29,19 @@ export class PensamentoComponent implements OnInit {
       return 'pensamento-g';
     }
     return 'pensamento-p';
+  }
+
+  statusFavorito(): string {
+    if (this.pensamento.favorito) {
+      return 'ativo';
+    } else {
+      return 'inativo'
+    }
+  }
+
+  atualizarFavorito(): void {
+    this.pensamentoService.mudarFavorito(this.pensamento).subscribe(() => {
+      this.listaFavoritos.splice(this.listaFavoritos.indexOf(this.pensamento), 1);
+    });
   }
 }
